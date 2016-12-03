@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>hw-02</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <style>
+        #txt{
+            border: 2px solid red;
+            width:100px;
+            height:30px;
+            text-align: center;
+            line-height:30px;
+        }
+    </style>
+</head>
+<body>
+        <input class="number" type="text">
+        <input id="btn" type="button" onclick="square()" value="平方">
+        <script>
+            function square(){
+                var num=d3.select(".number")
+                          .property("value");
+                    
+                console.log(num);
+                
+                d3.select(".number")
+                  .property("value",num*num);
+            };
+            
+            var svg=d3.select("body")
+                      .append("svg")
+                      .attr({
+                          width:500,
+                          height:500
+                      });
+            for(i=0;i<5;i++){
+               d3.select("svg")
+                 .append("line")
+                 .attr({
+                   x1:50,
+                   y1:50+i*50,
+                   x2:450,
+                   y2:50+i*50,
+                   stroke:"black"
+                  });
+
+            }
+            
+            d3.select("svg")
+              .append("rect")
+              .attr({
+                x:300,
+                y:50,
+                width:5,
+                height:125
+               });
+            
+            d3.select("svg")
+              .append("circle")
+              .attr({
+                cx:280,
+                cy:175,
+                r:25
+            })
+            
+            d3.select("svg")
+              .append("text")
+              .attr({
+                    x:270,
+                    y:250,
+                    "font-family":"arial",
+                    "font-size":50
+                    })
+              .text("A");
+
+            
+              
+        </script>
+            
+</body>
+</html>
