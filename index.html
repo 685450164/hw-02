@@ -93,16 +93,17 @@
             svg2.append("rect")
                 .attr({
                     x: 20,
-                    y: 20 + i * 20,
+                    y: 20 + i * 12,
                     width: num,
-                    height: 15,
+                    height: 10,
                     fill: "red"
                 });
             
             svg2.append("text")
                 .attr({
                 x:num+30,
-                y:35 + i * 20,
+                y:30 + i * 12,
+                "font-family":"arial",				
                 "font-size":10
                 })
                 .text(num);
